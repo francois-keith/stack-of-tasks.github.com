@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Getting Started</title>
+
+    <!-- Bootstrap -->
+    <link href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Font Awesome -->
+    <link href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet">
+
+    <!-- Jekyll Syntax Highlighting -->
+    <link href="syntax.css" rel="stylesheet">
+
+    <!-- Website specific stylesheet -->
+    <link href="style.css" rel="stylesheet">
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+	<script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+	<script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+	<![endif]-->
+
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="//netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
+
+    
+    <!-- MathJax -->
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}});
+    </script>
+    <script type="text/javascript"
+	    src="https://c328740.ssl.cf1.rackcdn.com/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+    </script>
+    
+
+    
+    <!-- highlight.js -->
+    <link href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.0/styles/github.min.css" rel="stylesheet">
+    <script type="text/javascript"
+	    src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.0/highlight.min.js">
+    </script>
+    <script>hljs.initHighlightingOnLoad();</script>
+    
+
+    <!-- Google Analytics -->
+    <script type="text/javascript">
+
+        var _gaq = _gaq || [];
+	  _gaq.push(['_setAccount', 'UA-34448532-1']);
+	  _gaq.push(['_trackPageview']);
+
+	  (function() {
+	    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+	    ga.src = ('https:' == document.location.protocol ? 'https://' : 'http://') + 'stats.g.doubleclick.net/dc.js';
+	    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+	  })();
+
+    </script>
+
+    <script type="text/javascript" src="/js/oauth.min.js"></script>
+
+    <!-- favicons generated with http://realfavicongenerator.net -->
+    <link rel="shortcut icon" href="/assets/favicons/favicon.ico">
+    <link rel="apple-touch-icon" sizes="57x57" href="/assets/favicons/apple-touch-icon-57x57.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="/assets/favicons/apple-touch-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="/assets/favicons/apple-touch-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="/assets/favicons/apple-touch-icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="/assets/favicons/apple-touch-icon-60x60.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="/assets/favicons/apple-touch-icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="/assets/favicons/apple-touch-icon-76x76.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="/assets/favicons/apple-touch-icon-152x152.png">
+    <link rel="icon" type="image/png" href="/assets/favicons/favicon-196x196.png" sizes="196x196">
+    <link rel="icon" type="image/png" href="/assets/favicons/favicon-160x160.png" sizes="160x160">
+    <link rel="icon" type="image/png" href="/assets/favicons/favicon-96x96.png" sizes="96x96">
+    <link rel="icon" type="image/png" href="/assets/favicons/favicon-16x16.png" sizes="16x16">
+    <link rel="icon" type="image/png" href="/assets/favicons/favicon-32x32.png" sizes="32x32">
+    <meta name="msapplication-TileColor" content="#2b5797">
+    <meta name="msapplication-TileImage" content="/assets/favicons/mstile-144x144.png">
+    <meta name="msapplication-square70x70logo" content="/assets/favicons/mstile-70x70.png">
+    <meta name="msapplication-square144x144logo" content="/assets/favicons/mstile-144x144.png">
+    <meta name="msapplication-square150x150logo" content="/assets/favicons/mstile-150x150.png">
+    <meta name="msapplication-square310x310logo" content="/assets/favicons/mstile-310x310.png">
+    <meta name="msapplication-wide310x150logo" content="/assets/favicons/mstile-310x150.png">
+
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Getting Started">
+    <meta property="og:site_name" content="RobOptim">
+    <meta property="og:description" content="RobOptim: Numerical Optimization for Robotics">
+    <meta property="og:url" content="http://www.roboptim.net/">
+    <meta property="og:locale" content="en_US">
+
+    <meta property="fb:page_id" content="234139373456687">
+    <meta property="fb:admins" content="719767467" />
+
+  </head>
+  <body>
+      <div class="navbar navbar-default navbar-static-top" role="navigation">
+        <div class="container-fluid">
+          <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+              <span class="sr-only">Toggle navigation</span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="index.html">RobOptim</a>
+          </div>
+          <div class="navbar-collapse collapse">
+            <ul class="nav navbar-nav">
+	      
+<li><a href="/download.html"><span class='glyphicon glyphicon-download'></span> Download</a></li>
+
+
+	      <li class="dropdown">
+		<a href="#" class="dropdown-toggle" data-toggle="dropdown"><span class="glyphicon glyphicon-book"></span>
+		  Documentation <b class="caret"></b></a>
+		<ul class="dropdown-menu">
+		  <li class="dropdown-header">RobOptim Features</li>
+		  
+<li><a href="/showcase.html">Showcase</a></li>
+
+
+		  
+<li><a href="/solvers.html">Solvers</a></li>
+
+
+		  
+<li><a href="/benchmark.html">Benchmark</a></li>
+
+
+		  
+<li><a href="/faq.html">FAQ</a></li>
+
+
+		  <li class="divider"></li>
+		  <li class="dropdown-header">RobOptim Core</li>
+		  
+<li><a href="/getting-started.html">Getting Started</a></li>
+
+
+		  <li class="divider"></li>
+		  
+<li><a href="/documentation.html">API Documentation</a></li>
+
+
+		</ul>
+	      </li>
+
+	      <li class="dropdown">
+		<a href="#" class="dropdown-toggle" data-toggle="dropdown"><span class="glyphicon glyphicon-wrench"></span>
+		  Development <b class="caret"></b></a>
+		<ul class="dropdown-menu">
+		  
+<li><a href="/development.html">Development Dashboard</a></li>
+
+
+		  <li class="divider"></li>
+		  <li><a href="http://www.github.com/roboptim/">View on GitHub</a></li>
+		</ul>
+	      </li>
+
+              <li><a href="https://groups.google.com/forum/#!forum/roboptim">
+		  <span class="glyphicon glyphicon-question-sign"></span> Support</a></li>
+            </ul>
+          </div><!--/.nav-collapse -->
+        </div><!--/.container-fluid -->
+      </div>
+
+      <div class="container">
+	<h1 id="bridge-with-ros" class="page-header">Getting Started</h1>
+
+<h2>Example</h2>
+
+        <h2>Bridge with ROS</h2>
+
+        <h3>ROS messages to signals</h3>
+Some entity and mecanisms allow you to exchange data from the ROS environment to the stack of tasks one, 
+and convert ros messages in sot signals.
+More details are provided <a href="http://wiki.ros.org/dynamic_graph_bridge">on the ros wiki</a>
+
+        <h3>Executing python commands</h3>
+
+The run_command service only considers the first line of your command, and does not accept end of line characters.
+In other words, if you run this:
+rosservice call run_command "print 'a'\n print 'b'"
+You'll have this result:
+result: <NULL>
+stdout: ''
+stderr: SyntaxError: ('unexpected character after line continuation character', ('<string>', 1, 21, "print 'a'\\n print 'b'"))
+
+But if you use this:
+rosservice call run_command "print 'a'; print 'b'"
+You'll have the expected result:
+result: None
+stdout: a
+b
+
+So you have 3 solutions:
+1. Use the python interpreter. If the use of the rosservice is not mandatory, this is the simplest solution.
+Calling run_command without args will start a python interface in which you can type python commands easily
+rosrun dynamic_graph_bridge run_command
+> ...
+
+2. make your instructions hold in one line (if applicable).
+rosservice call run_command  "'[(x+1) for x in [1,2,3]]'"
+
+3. write your instruction in a file and execute it.
+rosrun dynamic_graph_bridge run_command 'file.py'
+
+
+Note: in the future, please ask such questions in github. Especially in cases like this one where this can be attached to a specific repository.
+This will help future users that encounter the same issue.
+
+
+
+<h2>Tutorial</h2>
+
+<p>
+  A tutorial with exercises is also <a href="https://github.com/roboptim/roboptim-tutorial">available on GitHub</a>.
+</p>
+
+<div style="padding: 2em"></div>
+
+      </div> <!-- /container -->
+
+      
+      <div class="container"><div id="disqus_thread"></div></div>
+ <script type="text/javascript">
+   var disqus_shortname = 'roboptim';
+   var disqus_identifier = 'bridge-with-ros.html';
+   var disqus_title = 'Getting Started';
+   var disqus_url = 'http://roboptim.net/bridge-with-ros.html';
+   (function() {
+   var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+   dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+   (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+   })();
+ </script>
+ <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+ <a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+
+      
+
+      <div class="container">
+	<!-- FOOTER -->
+	<footer>
+          <p class="pull-right"><a href="#">Back to top</a></p>
+          <p>&copy; 2014 <a href="authors.html">RobOptim Team</a> &middot; <a href="http://www.github.com/roboptim">GitHub</a>
+	    &middot; <a href="http://www.github.com/roboptim/roboptim.github.com">Fork this website</a>
+	  </p>
+      </footer>
+      </div> <!-- /container -->
+  </body>
+</html>

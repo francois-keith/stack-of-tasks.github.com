@@ -1,0 +1,462 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Development</title>
+
+    <!-- Bootstrap -->
+    <link href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Font Awesome -->
+    <link href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet">
+
+    <!-- Jekyll Syntax Highlighting -->
+    <link href="syntax.css" rel="stylesheet">
+
+    <!-- Website specific stylesheet -->
+    <link href="style.css" rel="stylesheet">
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+	<script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+	<script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+	<![endif]-->
+
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="//netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
+
+    
+
+    
+
+    <!-- Google Analytics -->
+    <script type="text/javascript">
+
+        var _gaq = _gaq || [];
+	  _gaq.push(['_setAccount', 'UA-34448532-1']);
+	  _gaq.push(['_trackPageview']);
+
+	  (function() {
+	    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+	    ga.src = ('https:' == document.location.protocol ? 'https://' : 'http://') + 'stats.g.doubleclick.net/dc.js';
+	    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+	  })();
+
+    </script>
+
+    <script type="text/javascript" src="/js/oauth.min.js"></script>
+
+    <!-- favicons generated with http://realfavicongenerator.net -->
+    <link rel="shortcut icon" href="/assets/favicons/favicon.ico">
+    <link rel="apple-touch-icon" sizes="57x57" href="/assets/favicons/apple-touch-icon-57x57.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="/assets/favicons/apple-touch-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="/assets/favicons/apple-touch-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="/assets/favicons/apple-touch-icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="/assets/favicons/apple-touch-icon-60x60.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="/assets/favicons/apple-touch-icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="/assets/favicons/apple-touch-icon-76x76.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="/assets/favicons/apple-touch-icon-152x152.png">
+    <link rel="icon" type="image/png" href="/assets/favicons/favicon-196x196.png" sizes="196x196">
+    <link rel="icon" type="image/png" href="/assets/favicons/favicon-160x160.png" sizes="160x160">
+    <link rel="icon" type="image/png" href="/assets/favicons/favicon-96x96.png" sizes="96x96">
+    <link rel="icon" type="image/png" href="/assets/favicons/favicon-16x16.png" sizes="16x16">
+    <link rel="icon" type="image/png" href="/assets/favicons/favicon-32x32.png" sizes="32x32">
+    <meta name="msapplication-TileColor" content="#2b5797">
+    <meta name="msapplication-TileImage" content="/assets/favicons/mstile-144x144.png">
+    <meta name="msapplication-square70x70logo" content="/assets/favicons/mstile-70x70.png">
+    <meta name="msapplication-square144x144logo" content="/assets/favicons/mstile-144x144.png">
+    <meta name="msapplication-square150x150logo" content="/assets/favicons/mstile-150x150.png">
+    <meta name="msapplication-square310x310logo" content="/assets/favicons/mstile-310x310.png">
+    <meta name="msapplication-wide310x150logo" content="/assets/favicons/mstile-310x150.png">
+
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Development">
+    <meta property="og:site_name" content="RobOptim">
+    <meta property="og:description" content="RobOptim: Numerical Optimization for Robotics">
+    <meta property="og:url" content="http://www.roboptim.net/">
+    <meta property="og:locale" content="en_US">
+
+    <meta property="fb:page_id" content="234139373456687">
+    <meta property="fb:admins" content="719767467" />
+
+  </head>
+  <body>
+      <div class="navbar navbar-default navbar-static-top" role="navigation">
+        <div class="container-fluid">
+          <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+              <span class="sr-only">Toggle navigation</span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="index.html">RobOptim</a>
+          </div>
+          <div class="navbar-collapse collapse">
+            <ul class="nav navbar-nav">
+	      
+<li><a href="/download.html"><span class='glyphicon glyphicon-download'></span> Download</a></li>
+
+
+	      <li class="dropdown">
+		<a href="#" class="dropdown-toggle" data-toggle="dropdown"><span class="glyphicon glyphicon-book"></span>
+		  Documentation <b class="caret"></b></a>
+		<ul class="dropdown-menu">
+		  <li class="dropdown-header">RobOptim Features</li>
+		  
+<li><a href="/showcase.html">Showcase</a></li>
+
+
+		  
+<li><a href="/solvers.html">Solvers</a></li>
+
+
+		  
+<li><a href="/benchmark.html">Benchmark</a></li>
+
+
+		  
+<li><a href="/faq.html">FAQ</a></li>
+
+
+		  <li class="divider"></li>
+		  <li class="dropdown-header">RobOptim Core</li>
+		  
+<li><a href="/getting-started.html">Getting Started</a></li>
+
+
+		  <li class="divider"></li>
+		  
+<li><a href="/documentation.html">API Documentation</a></li>
+
+
+		</ul>
+	      </li>
+
+	      <li class="dropdown">
+		<a href="#" class="dropdown-toggle" data-toggle="dropdown"><span class="glyphicon glyphicon-wrench"></span>
+		  Development <b class="caret"></b></a>
+		<ul class="dropdown-menu">
+		  
+<li class="active"><a href="/development.html" class="active">Development Dashboard</a></li>
+
+
+		  <li class="divider"></li>
+		  <li><a href="http://www.github.com/roboptim/">View on GitHub</a></li>
+		</ul>
+	      </li>
+
+              <li><a href="https://groups.google.com/forum/#!forum/roboptim">
+		  <span class="glyphicon glyphicon-question-sign"></span> Support</a></li>
+            </ul>
+          </div><!--/.nav-collapse -->
+        </div><!--/.container-fluid -->
+      </div>
+
+      <div class="container">
+	<h1 id="development" class="page-header">Development</h1>
+
+<h2>Dashboard</h2>
+
+<div class="table-responsive">
+  <table class="table table-condensed" id="status">
+    <thead>
+      <tr>
+	<td><em>Package</em></td>
+	<td>Build</td>
+	<td>Coverage</td>
+	<td>Issues</td>
+	<td>Pull Requests</td>
+      </tr>
+    </thead>
+    <tbody>
+      
+      <tr id="dynamic-graph" style="">
+	<td><a href="https://github.com/stack-of-tasks/dynamic-graph">Dynamic Graph</a>
+	  
+	  
+	</td>
+	<td id="dynamic-graph-travis-status">n/a</td>
+	<td id="dynamic-graph-coveralls-status">
+	  <a href="https://coveralls.io/r/stack-of-tasks/dynamic-graph?branch=master">
+	    <img src="https://coveralls.io/repos/stack-of-tasks/dynamic-graph/badge.png?branch=master"
+		 alt="Coverage Status" />
+	</td>
+	<td id="dynamic-graph-issues">n/a</td>
+	<td id="dynamic-graph-pr">n/a</td>
+      </tr>
+      
+      <tr id="dynamic-graph-python" style="">
+	<td><a href="https://github.com/stack-of-tasks/dynamic-graph-python">Dynamic Graph Python</a>
+	  
+	  
+	</td>
+	<td id="dynamic-graph-python-travis-status">n/a</td>
+	<td id="dynamic-graph-python-coveralls-status">
+	  <a href="https://coveralls.io/r/stack-of-tasks/dynamic-graph-python?branch=master">
+	    <img src="https://coveralls.io/repos/stack-of-tasks/dynamic-graph-python/badge.png?branch=master"
+		 alt="Coverage Status" />
+	</td>
+	<td id="dynamic-graph-python-issues">n/a</td>
+	<td id="dynamic-graph-python-pr">n/a</td>
+      </tr>
+      
+      <tr id="sot-core" style="">
+	<td><a href="https://github.com/stack-of-tasks/sot-core">SoT Core</a>
+	  
+	  
+	</td>
+	<td id="sot-core-travis-status">n/a</td>
+	<td id="sot-core-coveralls-status">
+	  <a href="https://coveralls.io/r/stack-of-tasks/sot-core?branch=master">
+	    <img src="https://coveralls.io/repos/stack-of-tasks/sot-core/badge.png?branch=master"
+		 alt="Coverage Status" />
+	</td>
+	<td id="sot-core-issues">n/a</td>
+	<td id="sot-core-pr">n/a</td>
+      </tr>
+      
+      <tr id="sot-tools" style="">
+	<td><a href="https://github.com/stack-of-tasks/sot-tools">SoT Tools</a>
+	  
+	  
+	</td>
+	<td id="sot-tools-travis-status">n/a</td>
+	<td id="sot-tools-coveralls-status">
+	  <a href="https://coveralls.io/r/stack-of-tasks/sot-tools?branch=master">
+	    <img src="https://coveralls.io/repos/stack-of-tasks/sot-tools/badge.png?branch=master"
+		 alt="Coverage Status" />
+	</td>
+	<td id="sot-tools-issues">n/a</td>
+	<td id="sot-tools-pr">n/a</td>
+      </tr>
+      
+      <tr id="sot-application" style="">
+	<td><a href="https://github.com/stack-of-tasks/sot-application">SoT Application</a>
+	  
+	  
+	</td>
+	<td id="sot-application-travis-status">n/a</td>
+	<td id="sot-application-coveralls-status">
+	  <a href="https://coveralls.io/r/stack-of-tasks/sot-application?branch=master">
+	    <img src="https://coveralls.io/repos/stack-of-tasks/sot-application/badge.png?branch=master"
+		 alt="Coverage Status" />
+	</td>
+	<td id="sot-application-issues">n/a</td>
+	<td id="sot-application-pr">n/a</td>
+      </tr>
+      
+      <tr id="soth" style="">
+	<td><a href="https://github.com/stack-of-tasks/soth">Soth</a>
+	  
+	  
+	</td>
+	<td id="soth-travis-status">n/a</td>
+	<td id="soth-coveralls-status">
+	  <a href="https://coveralls.io/r/stack-of-tasks/soth?branch=master">
+	    <img src="https://coveralls.io/repos/stack-of-tasks/soth/badge.png?branch=master"
+		 alt="Coverage Status" />
+	</td>
+	<td id="soth-issues">n/a</td>
+	<td id="soth-pr">n/a</td>
+      </tr>
+      
+      <tr id="sot-dyninv" style="">
+	<td><a href="https://github.com/stack-of-tasks/sot-dyninv">SoT Dyninv</a>
+	  
+	  
+	</td>
+	<td id="sot-dyninv-travis-status">n/a</td>
+	<td id="sot-dyninv-coveralls-status">
+	  <a href="https://coveralls.io/r/stack-of-tasks/sot-dyninv?branch=master">
+	    <img src="https://coveralls.io/repos/stack-of-tasks/sot-dyninv/badge.png?branch=master"
+		 alt="Coverage Status" />
+	</td>
+	<td id="sot-dyninv-issues">n/a</td>
+	<td id="sot-dyninv-pr">n/a</td>
+      </tr>
+      
+      <tr id="sot-pattern-generator" style="">
+	<td><a href="https://github.com/stack-of-tasks/sot-pattern-generator">SoT Pattern Generator</a>
+	  
+	  
+	</td>
+	<td id="sot-pattern-generator-travis-status">n/a</td>
+	<td id="sot-pattern-generator-coveralls-status">
+	  <a href="https://coveralls.io/r/stack-of-tasks/sot-pattern-generator?branch=master">
+	    <img src="https://coveralls.io/repos/stack-of-tasks/sot-pattern-generator/badge.png?branch=master"
+		 alt="Coverage Status" />
+	</td>
+	<td id="sot-pattern-generator-issues">n/a</td>
+	<td id="sot-pattern-generator-pr">n/a</td>
+      </tr>
+      
+      <tr id="sot-romeo" style="">
+	<td><a href="https://github.com/stack-of-tasks/sot-romeo">SoT Romeo</a>
+	  
+	  
+	</td>
+	<td id="sot-romeo-travis-status">n/a</td>
+	<td id="sot-romeo-coveralls-status">
+	  <a href="https://coveralls.io/r/stack-of-tasks/sot-romeo?branch=master">
+	    <img src="https://coveralls.io/repos/stack-of-tasks/sot-romeo/badge.png?branch=master"
+		 alt="Coverage Status" />
+	</td>
+	<td id="sot-romeo-issues">n/a</td>
+	<td id="sot-romeo-pr">n/a</td>
+      </tr>
+      
+    </tbody>
+  </table>
+
+  <div class="bs-callout bs-callout-warning">
+    <h4>Access to all developer information...</h4>
+
+    <p>
+      Due to GitHub API quota, if you access this page frequently, you
+      will need to login to see the number of issues and pull request.
+    </p>
+
+    <button type="button" class="btn btn-primary" id="github_login">
+      <span class="glyphicon glyphicon-new-window"></span> Login with GitHub
+    </button>
+  </div>
+
+
+  <div style="padding:5em">&nbsp;</div>
+  <h2>Thank You!</h2>
+
+  <div class="container marketing">
+
+    <div class="row featurette">
+      <div class="col-md-7">
+        <h2 class="featurette-heading">Hosted on GitHub</h2>
+        <p class="lead"><a href="http://www.github.com/">GitHub</a> provides hosting for our source code and website.</p>
+      </div>
+      <div class="col-md-5">
+	 <img src="assets/octocat-200px.png" alt="GitHub" />
+      </div>
+    </div>
+
+    <hr class="featurette-divider">
+
+    <div class="row">
+      <div class="col-md-5">
+	<img src="assets/travis-mascot-200px.png" alt="Travis" />
+      </div>
+      <div class="col-md-7">
+	<h2 class="featurette-heading">Continuous Integration</h2>
+	<p class="lead">Each commit of every package is graciously built by <a href="http://www.travis-ci.org/">Travis CI</a>.</p>
+      </div>
+    </div>
+
+    <hr class="featurette-divider">
+
+    <div class="row featurette">
+      <div class="col-md-7">
+        <h2 class="featurette-heading">Test Reports by CoverAlls.io</h2>
+        <p class="lead"><a href="http://www.coveralls.io/">CoverAlls</a> summarizes RobOptim test coverage.</p>
+      </div>
+      <div class="col-md-5">
+	&nbsp;
+      </div>
+    </div>
+
+    <hr class="featurette-divider">
+  </div>
+
+
+  <script type="text/javascript">
+    OAuth.initialize('BsiMoS_RRVC-O0C75AkDOo5BAuk');
+    $("#github_login").click(function(){
+      OAuth.popup('github', function(err, result) {
+        if (result) {
+          window.localStorage.setItem('access_token', result.access_token);
+          console.log(result.access_token);
+        } else {
+          console.log(err);
+        };
+      });
+    });
+
+    var access_token = window.localStorage.getItem('access_token');
+    var stateToStyle = {
+    "passed": "",
+    "errored": "active",
+    "failed": "danger",
+    };
+    var projects = [
+    "dynamic-graph", "dynamic-graph-python",
+    "sot-core", "sot-application",
+    "soth ", "sot-dyninv",
+    "sot-pattern-generator", "sot-tools",
+    ];
+
+    $.each(projects, function(index, project) {
+      var url = "https://api.travis-ci.org/repos/stack-of-tasks/" + project + "/branches/master";
+      $.get(url, function (data) {
+        $(data.branch).each(function(index, value){
+          var content = "";
+          if (value.state === "passed")
+            content = "<span class='glyphicon glyphicon-ok-sign'></span>";
+          else if (value.state === "errored")
+            content = "<span class='glyphicon glyphicon-remove-sign'></span>";
+          else
+            content = value.state;
+          content = "<a href ='https://travis-ci.org/stack-of-tasks/" + project + "'>" + content + "</a>";
+          $("#" + project + "-travis-status").html(content);
+          $("#" + project).removeClass().addClass(stateToStyle[value.state]);
+        });
+      });
+      url = "https://api.github.com/repos/stack-of-tasks/" + project + "/issues?access_token=" + access_token;
+      $.get(url, function (data) {
+          content = "<a href ='https://www.github.com/stack-of-tasks/" + project + "/issues'>" + data.length + "</a>";
+          $("#" + project + "-issues").html(content);
+      });
+      url = "https://api.github.com/repos/stack-of-tasks/" + project + "/pulls?access_token=" + access_token;
+      $.get(url, function (data) {
+          content = "<a href ='https://www.github.com/stack-of-tasks/" + project + "/pulls'>" + data.length + "</a>";
+          $("#" + project + "-pr").html(content);
+      });
+
+    });
+  </script>
+</div>
+
+
+      </div> <!-- /container -->
+
+      
+      <div class="container"><div id="disqus_thread"></div></div>
+ <script type="text/javascript">
+   var disqus_shortname = 'roboptim';
+   var disqus_identifier = 'development.html';
+   var disqus_title = 'Development';
+   var disqus_url = 'http://roboptim.net/development.html';
+   (function() {
+   var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+   dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+   (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+   })();
+ </script>
+ <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+ <a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+
+      
+
+      <div class="container">
+	<!-- FOOTER -->
+	<footer>
+          <p class="pull-right"><a href="#">Back to top</a></p>
+          <p>&copy; 2014 <a href="authors.html">RobOptim Team</a> &middot; <a href="http://www.github.com/roboptim">GitHub</a>
+	    &middot; <a href="http://www.github.com/roboptim/roboptim.github.com">Fork this website</a>
+	  </p>
+      </footer>
+      </div> <!-- /container -->
+  </body>
+</html>

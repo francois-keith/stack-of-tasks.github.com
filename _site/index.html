@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Numerical Optimization for Robotics</title>
+
+    <!-- Bootstrap -->
+    <link href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Font Awesome -->
+    <link href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet">
+
+    <!-- Jekyll Syntax Highlighting -->
+    <link href="syntax.css" rel="stylesheet">
+
+    <!-- Website specific stylesheet -->
+    <link href="style.css" rel="stylesheet">
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+	<script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+	<script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+	<![endif]-->
+
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="//netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
+
+    
+
+    
+
+    <!-- Google Analytics -->
+    <script type="text/javascript">
+
+        var _gaq = _gaq || [];
+	  _gaq.push(['_setAccount', 'UA-34448532-1']);
+	  _gaq.push(['_trackPageview']);
+
+	  (function() {
+	    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+	    ga.src = ('https:' == document.location.protocol ? 'https://' : 'http://') + 'stats.g.doubleclick.net/dc.js';
+	    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+	  })();
+
+    </script>
+
+    <script type="text/javascript" src="/js/oauth.min.js"></script>
+
+    <!-- favicons generated with http://realfavicongenerator.net -->
+    <link rel="shortcut icon" href="/assets/favicons/favicon.ico">
+    <link rel="apple-touch-icon" sizes="57x57" href="/assets/favicons/apple-touch-icon-57x57.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="/assets/favicons/apple-touch-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="/assets/favicons/apple-touch-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="/assets/favicons/apple-touch-icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="/assets/favicons/apple-touch-icon-60x60.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="/assets/favicons/apple-touch-icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="/assets/favicons/apple-touch-icon-76x76.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="/assets/favicons/apple-touch-icon-152x152.png">
+    <link rel="icon" type="image/png" href="/assets/favicons/favicon-196x196.png" sizes="196x196">
+    <link rel="icon" type="image/png" href="/assets/favicons/favicon-160x160.png" sizes="160x160">
+    <link rel="icon" type="image/png" href="/assets/favicons/favicon-96x96.png" sizes="96x96">
+    <link rel="icon" type="image/png" href="/assets/favicons/favicon-16x16.png" sizes="16x16">
+    <link rel="icon" type="image/png" href="/assets/favicons/favicon-32x32.png" sizes="32x32">
+    <meta name="msapplication-TileColor" content="#2b5797">
+    <meta name="msapplication-TileImage" content="/assets/favicons/mstile-144x144.png">
+    <meta name="msapplication-square70x70logo" content="/assets/favicons/mstile-70x70.png">
+    <meta name="msapplication-square144x144logo" content="/assets/favicons/mstile-144x144.png">
+    <meta name="msapplication-square150x150logo" content="/assets/favicons/mstile-150x150.png">
+    <meta name="msapplication-square310x310logo" content="/assets/favicons/mstile-310x310.png">
+    <meta name="msapplication-wide310x150logo" content="/assets/favicons/mstile-310x150.png">
+
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Numerical Optimization for Robotics">
+    <meta property="og:site_name" content="RobOptim">
+    <meta property="og:description" content="RobOptim: Numerical Optimization for Robotics">
+    <meta property="og:url" content="http://www.roboptim.net/">
+    <meta property="og:locale" content="en_US">
+
+    <meta property="fb:page_id" content="234139373456687">
+    <meta property="fb:admins" content="719767467" />
+
+  </head>
+  <body>
+      <div class="navbar navbar-default navbar-static-top" role="navigation">
+        <div class="container-fluid">
+          <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+              <span class="sr-only">Toggle navigation</span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="index.html">RobOptim</a>
+          </div>
+          <div class="navbar-collapse collapse">
+            <ul class="nav navbar-nav">
+	      
+<li><a href="/download.html"><span class='glyphicon glyphicon-download'></span> Download</a></li>
+
+
+	      <li class="dropdown">
+		<a href="#" class="dropdown-toggle" data-toggle="dropdown"><span class="glyphicon glyphicon-book"></span>
+		  Documentation <b class="caret"></b></a>
+		<ul class="dropdown-menu">
+		  <li class="dropdown-header">RobOptim Features</li>
+		  
+<li><a href="/showcase.html">Showcase</a></li>
+
+
+		  
+<li><a href="/solvers.html">Solvers</a></li>
+
+
+		  
+<li><a href="/benchmark.html">Benchmark</a></li>
+
+
+		  
+<li><a href="/faq.html">FAQ</a></li>
+
+
+		  <li class="divider"></li>
+		  <li class="dropdown-header">RobOptim Core</li>
+		  
+<li><a href="/getting-started.html">Getting Started</a></li>
+
+
+		  <li class="divider"></li>
+		  
+<li><a href="/documentation.html">API Documentation</a></li>
+
+
+		</ul>
+	      </li>
+
+	      <li class="dropdown">
+		<a href="#" class="dropdown-toggle" data-toggle="dropdown"><span class="glyphicon glyphicon-wrench"></span>
+		  Development <b class="caret"></b></a>
+		<ul class="dropdown-menu">
+		  
+<li><a href="/development.html">Development Dashboard</a></li>
+
+
+		  <li class="divider"></li>
+		  <li><a href="http://www.github.com/roboptim/">View on GitHub</a></li>
+		</ul>
+	      </li>
+
+              <li><a href="https://groups.google.com/forum/#!forum/roboptim">
+		  <span class="glyphicon glyphicon-question-sign"></span> Support</a></li>
+            </ul>
+          </div><!--/.nav-collapse -->
+        </div><!--/.container-fluid -->
+      </div>
+
+      <div class="container">
+	<div class="container">
+  <div class="jumbotron">
+    <h1>Numerical Optimization for Robotics</h1>
+
+    <p>RobOptim is a Modern, Open-Source, C++ Library for Numerical Optimization applied to Robotics.</p>
+
+    <p>
+      <a class="btn btn-lg btn-primary" href="getting-started.html" role="button">Get started now &raquo;</a>
+    </p>
+  </div>
+</div>
+
+<div style="padding: 2em"></div>
+
+<!-- place somewhere in the <body> of your page -->
+<section class="slider">
+<div class="flexslider">
+  <ul class="slides">
+    
+      
+        
+          <li data-thumb="assets/showcase/ellipses.png">
+        
+        <a href="" target="_blank">
+        <img src="assets/showcase/ellipses.png"
+             alt="Non-Inclusive Contacts"
+             title="Non-Inclusive Contacts"/>
+        </a>
+        
+          <p class="flex-caption">Integration of Non-Inclusive Contacts in Posture Generation.</p>
+        
+        </li>
+      
+    
+      
+        
+          <li data-thumb="assets/showcase/capsule.png">
+        
+        <a href="https://github.com/roboptim/roboptim-capsule" target="_blank">
+        <img src="assets/showcase/capsule.png"
+             alt="RobOptim Capsule"
+             title="RobOptim Capsule"/>
+        </a>
+        
+          <p class="flex-caption">An automated optimal capsule generator over polyhedrons.</p>
+        
+        </li>
+      
+    
+      
+        <li class="slide play3">
+          <iframe width="560" height="200" id="youtubevideo"
+            title="Multi-contact planning"
+            src="http://www.youtube.com/embed/lJoUsCVJGxE?enablejsapi=1&version=3&playerapiid=youtubevideo&vq=hd720"
+            allowfullscreen frameborder="0"></iframe>
+        </li>
+      
+    
+  </ul>
+</div>
+</section>
+
+<!-- Load FlexSlider Library -->
+<script src="js/flexslider/jquery.flexslider-min.js"></script>
+
+<!-- Load FlexSlider style -->
+<link href="js/flexslider/flexslider.css" rel="stylesheet">
+
+<!-- Load custom slider style -->
+<link rel="stylesheet" href="slider.css" type="text/css">
+<script src="http://a.vimeocdn.com/js/froogaloop2.min.js"></script>
+
+<!-- Load YouTube player -->
+<script src="js/flexslider-youtube.js"></script>
+<script src="js/jquery.fitvids.js"></script>
+
+<script type="text/javascript">
+  // Initialize FlexSlider
+  $(window).load(function() {
+    $('.flexslider')
+    .fitVids()
+    .flexslider({
+      animation: "slide",
+      //controlNav: "thumbnails",
+      directionNav: true,
+      // TODO: need to stop slideshow while playing videos to handle this
+      slideshow:false,
+      slideshowSpeed: 7500,
+      animationLoop: true,
+      animationSpeed: 600,
+      pauseOnAction: true,
+      pauseOnHover: true,
+      touch: true,
+      smoothHeight: true,
+      video: true,
+      before: function(slider){
+        if (slider.slides.eq(slider.currentSlide).find('iframe').length !== 0)
+          $f( slider.slides.eq(slider.currentSlide).find('iframe').attr('id') ).api('pause');
+      }
+    });
+  });
+</script>
+
+<div style="padding: 2em"></div>
+
+
+
+   <div class="container marketing">
+      <hr class="featurette-divider">
+
+      <div class="row featurette">
+        <div class="col-md-7">
+          <h2 class="featurette-heading">Fast Development, <span class="text-muted">Fast Resolution.</span></h2>
+          <p class="lead">Define your optimization problem and call
+          solve. RobOptim handles the rest. RobOptim interfaces with
+          various state-of-the-art solvers to support advanced solving
+          techniques and lets you express your problem in C++ to ensure
+          optimal performances.</p>
+        </div>
+        <div class="col-md-5">
+          &nbsp;
+        </div>
+      </div>
+
+      <hr class="featurette-divider">
+
+      <div class="row featurette">
+        <div class="col-md-5">
+	  &nbsp;
+        </div>
+        <div class="col-md-7">
+          <h2 class="featurette-heading">Batteries, <span class="text-muted">Included.</span></h2>
+	   <p class="lead">RobOptim toolbox packages provide functions
+	   aiming to solve specific problems. Therefore, you spend less
+	   time reinventing the wheel and you can focus on solving your
+	   particular problem at hand!</p>
+	 </div>
+       </div>
+
+       <hr class="featurette-divider">
+
+       <div class="row featurette">
+	 <div class="col-md-7">
+	   <h2 class="featurette-heading">Free, <span class="text-muted">Forever.</span></h2>
+	   <p class="lead">RobOptim is licensed under the permissive
+	   LGPL-3 license allowing its use in commercial projects.</p>
+        </div>
+        <div class="col-md-5">
+	  <img src="assets/osi.png" alt="LGPL is an OSI Approved License" />
+        </div>
+      </div>
+
+      <hr class="featurette-divider">
+
+      <!-- /END THE FEATURETTES -->
+   </div>
+
+      </div> <!-- /container -->
+
+      
+
+      <div class="container">
+	<!-- FOOTER -->
+	<footer>
+          <p class="pull-right"><a href="#">Back to top</a></p>
+          <p>&copy; 2014 <a href="authors.html">RobOptim Team</a> &middot; <a href="http://www.github.com/roboptim">GitHub</a>
+	    &middot; <a href="http://www.github.com/roboptim/roboptim.github.com">Fork this website</a>
+	  </p>
+      </footer>
+      </div> <!-- /container -->
+  </body>
+</html>

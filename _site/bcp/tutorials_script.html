@@ -26,6 +26,7 @@
 
   <body>
 
+
     <!-- MAIN CONTENT -->
     <div id="main_content_wrap" class="outer">
       <section id="main_content" class="inner">
@@ -39,34 +40,32 @@ To vizualize the robot, you can use <code>rviz</code>.
 
         <h3>Running the python scripts</h3>
 
-To execute the scripts and display the results with rviz, you need 2 consoles.</br>
-
-In the first, start the viewer.
+To execute the scripts and display the results with rviz, you need 2 consoles
+In the first, start the viewer   
 <pre><code>$ roslaunch romeo_description sot_display.launch</code></pre>
-Note: if you do not want to use the viewer, you can only start <code>roscore</code>.</br>
+Note: if you do not want to use the viewer, you can only start <code>roscore</code>.
 
 In the second, start the python script.   
-<pre><code>$ ipython -i kine_romeo.py</code></pre>
+<pre><code>$ python -i kine_romeo.py</code></pre>
 
 <h3>Detail of the python scripts</h3>
 
-<p>
 Those scripts are located in <code>${your_installation_path}/lib/python2.X/site-packages/dynamic_graph/tutorial.</code>
 With the installation script, the installation path is <code>${HOME}/devel/INSTALLATION_FOLDER/install</code>,
-where <code>INSTALLATION_FOLDER</code> is the folder specified in the istallation.
+where <code>INSTALLATION_FOLDER</code> is the folder specified in the istallation
 
 python2.X is your version of python version: 2.6 or 2.7
-</p>
 
 To run them, it is necessary to complete the environment variables LD_LIBRARY_PATH and PYTHONPATH.
 To this purpose, you can either
 <ol>
-<li> source the file <code>config_XXX.bash</code> created during the compilation using the install-sot.sh script.
+<li> source the <code>config_XXX.bash</code> file created during the compilation using the install-sot.sh script.
 This file is located in the same folder as install_sot.sh.
 </li>
 <li>
 or you can do it manually:
-<pre><code>export your_installation_path=${HOME}/devel/INSTALLATION_FOLDER/install
+<pre><code>
+export your_installation_path=${HOME}/devel/INSTALLATION_FOLDER/install
 export ROS_PACKAGE_PATH=${your_installation_path}/../:$ROS_PACKAGE_PATH;
 export LD_LIBRARY_PATH=${your_installation_path}/lib/:$LD_LIBRARY_PATH;
 export LD_LIBRARY_PATH=${your_installation_path}/lib/plugin:$LD_LIBRARY_PATH;
@@ -90,31 +89,27 @@ The dictionary can be consulted using the command: <code>robot.tasks</code>
 <li>A 3d position task for the right hand</li>
 </ul>
 
-<p>
 This task is characterized by 4 entities: the task, the operational point (here the right hand augmented by a translation), the desired position for the hand (here only 3d are defined) and the gain of the task (an adaptive gain).   
 All those elements are gathered in a structure called _taskRH_,instance of _MetaTask6d_, that realizes all the links between the several entities.  
-</p>
 
 <p>
 In the script, only the position of the hand is controlled. To change the degrees of freedom controlled, please change the value of the signal selec.
 This signal is a sequence of boolean in this order: psi, theta, phi, z, y, x (reverse polish notation). For example:
 </p>
 
-<pre><code>taskRH.feature.selec.value = '111111' # The task is controlled in position and orientation.
+<pre>
+taskRH.feature.selec.value = '111111' # The task is controlled in position and orientation.
 taskRH.feature.selec.value = '000111' # The task is then controlled in position only
-</code></pre>
+</pre>
 
-<p>
 The definition of this task does not use the predefined version of the task contained in the dictionary, only to present an example of task creation.
 
 Typing <code>go</code>starts a the simulation loop.
 The robot will then go to the desired positions defined by the tasks. 
 You can change interactively the content of the stack, the hand... using the python interface.
-</p>
 
-<p>
 To continue the example, you can for example try adding a task on the left hand, following the same scheme as for the right hand.
-</p>
+
 
         <h3>walk_romeo.py</h3>
 

@@ -1,259 +1,149 @@
-<!DOCTYPE html>
-<html>
+---
+layout: default
+title: Numerical Optimization for Robotics
+sitemap:
+  lastmod: 2014-03-11
+  priority: 0.9
+  changefreq: monthly
+---
+<div class="container">
+  <div class="jumbotron">
+    <h1>Numerical Optimization for Robotics</h1>
 
-  <head>
-    <meta charset='utf-8' />
-    <meta http-equiv="X-UA-Compatible" content="chrome=1" />
-    <meta name="description" content="Stack of Tasks" />
+    <p>RobOptim is a Modern, Open-Source, C++ Library for Numerical Optimization applied to Robotics.</p>
 
-    <link rel="stylesheet" type="text/css" media="screen" href="stylesheets/stylesheet.css">
+    <p>
+      <a class="btn btn-lg btn-primary" href="getting-started.html" role="button">Get started now &raquo;</a>
+    </p>
+  </div>
+</div>
 
-    <title>Stack of Tasks</title>
-    <!-- HEADER -->
-    <div id="header_wrap" class="outer">
-      <header class="inner">
-        <a id="forkme_banner" href="https://github.com/stack-of-tasks">View on GitHub</a>
+<div style="padding: 2em"></div>
 
-        <h1 id="project_title">Stack of Tasks</h1>
-        <a id="home" href="index.html">Home</a>&nbsp;&nbsp;
-        <a id="installation" href="installation.html">Installation</a>&nbsp;&nbsp;
-        <a id="tutorials" href="tutorials.html">Tutorial</a>&nbsp;&nbsp;
-        <a id="faq" href="faq.html">FAQ</a>&nbsp;&nbsp;
-        <a id="showcase" href="showcase.html">Showcase</a>&nbsp;&nbsp;
-      </header>
-    </div>
-  </head>
+<!-- place somewhere in the <body> of your page -->
+<section class="slider">
+<div class="flexslider">
+  <ul class="slides">
+    {% for project in site.data.projects %}
+      {% if project.image %}
+        {% if project.thumbnail %}
+          <li data-thumb="assets/showcase/{{ project.thumbnail }}">
+        {% else %}
+          <li data-thumb="assets/showcase/{{ project.image }}">
+        {% endif %}
+        <a href="{{ project.url }}" target="_blank">
+        <img src="assets/showcase/{{ project.image }}"
+             alt="{{ project.title }}"
+             title="{{ project.title }}"/>
+        </a>
+        {% if project.description %}
+          <p class="flex-caption">{{ project.description }}</p>
+        {% endif %}
+        </li>
+      {% else if project.video %}
+        <li class="slide play3">
+          <iframe width="560" height="200" id="youtubevideo"
+            title="{{ project.title }}"
+            src="http://www.youtube.com/embed/{{ project.video.youtube_id}}?enablejsapi=1&version=3&playerapiid=youtubevideo&vq=hd720"
+            allowfullscreen frameborder="0"></iframe>
+        </li>
+      {% endif %}
+    {% endfor %}
+  </ul>
+</div>
+</section>
 
-  <body>
-    <!-- MAIN CONTENT -->
-    <div id="main_content_wrap" class="outer">
-      <section id="main_content" class="inner">
-        <h3>What is the stack of tasks?</h3>
+<!-- Load FlexSlider Library -->
+<script src="js/flexslider/jquery.flexslider-min.js"></script>
 
-	<iframe src="http://www.slideshare.net/slideshow/embed_code/25873424"
-		width="427" height="356" frameborder="0" marginwidth="0"
-		marginheight="0" scrolling="no" style="border:1px solid
-						       #CCC;border-width:1px 1px 0;margin-bottom:5px" allowfullscreen
-		webkitallowfullscreen
-		mozallowfullscreen> </iframe>
-	<div style="margin-bottom:5px">
-	  <strong> <a href="https://www.slideshare.net/thomas.moulard/stack-of-tasks-course"
-		      title="Stack of Tasks Course" target="_blank">Stack of Tasks Course</a>
-	  </strong>
-	</div>
+<!-- Load FlexSlider style -->
+<link href="js/flexslider/flexslider.css" rel="stylesheet">
 
-	<p>
-	  Support is done through the hpp AT laas DOT fr mailing-list.
-	</p>
+<!-- Load custom slider style -->
+<link rel="stylesheet" href="slider.css" type="text/css">
+<script src="http://a.vimeocdn.com/js/froogaloop2.min.js"></script>
 
+<!-- Load YouTube player -->
+<script src="js/flexslider-youtube.js"></script>
+<script src="js/jquery.fitvids.js"></script>
 
-	<h3>Libraries description</h3>
+<script type="text/javascript">
+  // Initialize FlexSlider
+  $(window).load(function() {
+    $('.flexslider')
+    .fitVids()
+    .flexslider({
+      animation: "slide",
+      //controlNav: "thumbnails",
+      directionNav: true,
+      // TODO: need to stop slideshow while playing videos to handle this
+      slideshow:false,
+      slideshowSpeed: 7500,
+      animationLoop: true,
+      animationSpeed: 600,
+      pauseOnAction: true,
+      pauseOnHover: true,
+      touch: true,
+      smoothHeight: true,
+      video: true,
+      before: function(slider){
+        if (slider.slides.eq(slider.currentSlide).find('iframe').length !== 0)
+          $f( slider.slides.eq(slider.currentSlide).find('iframe').attr('id') ).api('pause');
+      }
+    });
+  });
+</script>
 
-    <dl>
-      <dt><a href="https://github.com/stack-of-tasks/dynamic-graph"
-	     >dynamic-graph</a></dt>
-      <dd>Dataflow description.</dd>
-    </dl>
-
-    <h3>Documentation</h3>
-
-    <div class="block">
-      <h3>dynamic-graph</h3>
-      <ul>
-        <li><a href="dynamic-graph/doxygen/HEAD/">HTML (development version)
-	</a></li>
-      </ul>
-    </div>
-
-    <div class="block">
-      <h3>dynamic-graph-python</h3>
-      <ul>
-        <li><a href="dynamic-graph-python/doxygen/HEAD/">HTML (development version)
-	</a></li>
-      </ul>
-    </div>
-
-    <div class="block">
-      <h3>sot-core</h3>
-      <ul>
-        <li><a href="sot-core/doxygen/HEAD/">HTML (development version)
-	</a></li>
-      </ul>
-    </div>
-
-    <div class="block">
-      <h3>sot-dynamic</h3>
-      <ul>
-        <li><a href="sot-dynamic/doxygen/HEAD/">HTML (development version)
-	</a></li>
-      </ul>
-    </div>
-
-    <div class="block">
-      <h3>sot-tools</h3>
-      <ul>
-        <li><a href="sot-tools/doxygen/HEAD/">HTML (development version)
-	</a></li>
-      </ul>
-    </div>
-
-    <h3>Development</h3>
-
-    <p>Development branch (master) last build status and test coverage, thanks
-    to <a href="https://travis-ci.org/">travis-ci.org</a> and <a href="http://coveralls.io/">coveralls.io</a>.</p>
-    <table border="0" cellpadding="0">
-      <tr>
-	<td style="font-weight: bold; vertical-align: middle;">
-	  <a href="https://travis-ci.org/stack-of-tasks/dynamic-graph">dynamic-graph</a>
-	</td>
-	<td style="width: 5em; padding: 0.8em; vertical-align: middle">
-	  <img src="https://travis-ci.org/stack-of-tasks/dynamic-graph.png?branch=master" alt="dynamic-graph build status"/>
-	</td>
-	<td style="width: 5em; padding: 0.8em; vertical-align: middle">
-	  <a href='https://coveralls.io/r/stack-of-tasks/dynamic-graph?branch=master'>
-	    <img src='https://coveralls.io/repos/stack-of-tasks/dynamic-graph/badge.png?branch=master' alt='Coverage Status' />
-	  </a>
-	</td>
-      </tr>
-
-      <tr>
-	<td style="font-weight: bold; vertical-align: middle;">
-	  <a href="https://travis-ci.org/stack-of-tasks/dynamic-graph-python">dynamic-graph-python</a>
-	</td>
-	<td style="width: 5em; padding: 0.8em; vertical-align: middle">
-	  <img src="https://travis-ci.org/stack-of-tasks/dynamic-graph-python.png?branch=master" alt="dynamic-graph-python build status"/>
-	</td>
-	<td style="width: 5em; padding: 0.8em; vertical-align: middle">
-	  <a href='https://coveralls.io/r/stack-of-tasks/dynamic-graph-python?branch=master'>
-	    <img src='https://coveralls.io/repos/stack-of-tasks/dynamic-graph-python/badge.png?branch=master' alt='Coverage Status' />
-	  </a>
-	</td>
-      </tr>
-
-      <tr>
-	<td style="font-weight: bold; vertical-align: middle;">
-	  <a href="https://travis-ci.org/stack-of-tasks/sot-core">sot-core</a>
-	</td>
-	<td style="width: 5em; padding: 0.8em; vertical-align: middle">
-	  <img src="https://travis-ci.org/stack-of-tasks/sot-core.png?branch=master" alt="sot-core build status"/>
-	</td>
-	<td style="width: 5em; padding: 0.8em; vertical-align: middle">
-	  <a href='https://coveralls.io/r/stack-of-tasks/sot-core?branch=master'>
-	    <img src='https://coveralls.io/repos/stack-of-tasks/sot-core/badge.png?branch=master' alt='Coverage Status' />
-	  </a>
-	</td>
-      </tr>
-
-      <tr>
-	<td style="font-weight: bold; vertical-align: middle;">
-	  <a href="https://travis-ci.org/stack-of-tasks/sot-tools">sot-tools</a>
-	</td>
-	<td style="width: 5em; padding: 0.8em; vertical-align: middle">
-	  <img src="https://travis-ci.org/stack-of-tasks/sot-tools.png?branch=master" alt="sot-tools build status"/>
-	</td>
-	<td style="width: 5em; padding: 0.8em; vertical-align: middle">
-	  <a href='https://coveralls.io/r/stack-of-tasks/sot-tools?branch=master'>
-	    <img src='https://coveralls.io/repos/stack-of-tasks/sot-tools/badge.png?branch=master' alt='Coverage Status' />
-	  </a>
-	</td>
-      </tr>
-      <tr>
-	<td style="font-weight: bold; vertical-align: middle;">
-	  <a href="https://travis-ci.org/stack-of-tasks/sot-dynamic">sot-dynamic</a>
-	</td>
-	<td style="width: 5em; padding: 0.8em; vertical-align: middle">
-	  <img src="https://travis-ci.org/stack-of-tasks/sot-dynamic.png?branch=master" alt="sot-dynamic build status"/>
-	</td>
-	<td style="width: 5em; padding: 0.8em; vertical-align: middle">
-	  <a href='https://coveralls.io/r/stack-of-tasks/sot-dynamic?branch=master'>
-	    <img src='https://coveralls.io/repos/stack-of-tasks/sot-dynamic/badge.png?branch=master' alt='Coverage Status' />
-	  </a>
-	</td>
-      </tr>
-
-      <tr>
-	<td style="font-weight: bold; vertical-align: middle;">
-	  <a href="https://travis-ci.org/stack-of-tasks/sot-application">sot-application</a>
-	</td>
-	<td style="width: 5em; padding: 0.8em; vertical-align: middle">
-	  <img src="https://travis-ci.org/stack-of-tasks/sot-application.png?branch=master" alt="sot-application build status"/>
-	</td>
-	<td style="width: 5em; padding: 0.8em; vertical-align: middle">
-	  <a href='https://coveralls.io/r/stack-of-tasks/sot-application?branch=master'>
-	    <img src='https://coveralls.io/repos/stack-of-tasks/sot-application/badge.png?branch=master' alt='Coverage Status' />
-	  </a>
-	</td>
-      </tr>
-
-      <tr>
-	<td style="font-weight: bold; vertical-align: middle;">
-	  <a href="https://travis-ci.org/stack-of-tasks/sot-pattern-generator">sot-pattern-generator</a>
-	</td>
-	<td style="width: 5em; padding: 0.8em; vertical-align: middle">
-	  <img src="https://travis-ci.org/stack-of-tasks/sot-pattern-generator.png?branch=master" alt="sot-pattern-generator build status"/>
-	</td>
-	<td style="width: 5em; padding: 0.8em; vertical-align: middle">
-	  <a href='https://coveralls.io/r/stack-of-tasks/sot-pattern-generator?branch=master'>
-	    <img src='https://coveralls.io/repos/stack-of-tasks/sot-pattern-generator/badge.png?branch=master' alt='Coverage Status' />
-	  </a>
-	</td>
-      </tr>
-
-      <tr>
-	<td style="font-weight: bold; vertical-align: middle;">
-	  <a href="https://travis-ci.org/stack-of-tasks/soth">soth</a>
-	</td>
-	<td style="width: 5em; padding: 0.8em; vertical-align: middle">
-	  <img src="https://travis-ci.org/stack-of-tasks/soth.png?branch=master" alt="soth build status"/>
-	</td>
-	<td style="width: 5em; padding: 0.8em; vertical-align: middle">
-	  <a href='https://coveralls.io/r/stack-of-tasks/soth?branch=master'>
-	    <img src='https://coveralls.io/repos/stack-of-tasks/soth/badge.png?branch=master' alt='Coverage Status' />
-	  </a>
-	</td>
-      </tr>
-
-      <tr>
-	<td style="font-weight: bold; vertical-align: middle;">
-	  <a href="https://travis-ci.org/stack-of-tasks/sot-dyninv">sot-dyninv</a>
-	</td>
-	<td style="width: 5em; padding: 0.8em; vertical-align: middle">
-	  <img src="https://travis-ci.org/stack-of-tasks/sot-dyninv.png?branch=master" alt="sot-dyninv build status"/>
-	</td>
-	<td style="width: 5em; padding: 0.8em; vertical-align: middle">
-	  <a href='https://coveralls.io/r/stack-of-tasks/sot-dyninv?branch=master'>
-	    <img src='https://coveralls.io/repos/stack-of-tasks/sot-dyninv/badge.png?branch=master' alt='Coverage Status' />
-	  </a>
-	</td>
-      </tr>
-
-      <tr>
-	<td style="font-weight: bold; vertical-align: middle;">
-	  <a href="https://travis-ci.org/stack-of-tasks/redundant_manipulator_control">redundant_manipulator_control</a>
-	</td>
-	<td style="width: 5em; padding: 0.8em; vertical-align: middle">
-	  <img src="https://travis-ci.org/stack-of-tasks/redundant_manipulator_control.png?branch=master" alt="redundant_manipulator_control build status"/>
-	</td>
-	<td style="width: 5em; padding: 0.8em; vertical-align: middle">
-	</td>
-      </tr>
-
-
-    </table>
-
-    <div style="clear: both">&nbsp;</div>
-
-      </section>
-    </div>
-
-    <!-- FOOTER  -->
-    <div id="footer_wrap" class="outer">
-      <footer class="inner">
-        <p>Published with <a href="http://pages.github.com">GitHub Pages</a></p>
-      </footer>
-    </div>
+<div style="padding: 2em"></div>
 
 
 
-  </body>
-</html>
+   <div class="container marketing">
+      <hr class="featurette-divider">
+
+      <div class="row featurette">
+        <div class="col-md-7">
+          <h2 class="featurette-heading">Fast Development, <span class="text-muted">Fast Resolution.</span></h2>
+          <p class="lead">Define your optimization problem and call
+          solve. RobOptim handles the rest. RobOptim interfaces with
+          various state-of-the-art solvers to support advanced solving
+          techniques and lets you express your problem in C++ to ensure
+          optimal performances.</p>
+        </div>
+        <div class="col-md-5">
+          &nbsp;
+        </div>
+      </div>
+
+      <hr class="featurette-divider">
+
+      <div class="row featurette">
+        <div class="col-md-5">
+	  &nbsp;
+        </div>
+        <div class="col-md-7">
+          <h2 class="featurette-heading">Batteries, <span class="text-muted">Included.</span></h2>
+	   <p class="lead">RobOptim toolbox packages provide functions
+	   aiming to solve specific problems. Therefore, you spend less
+	   time reinventing the wheel and you can focus on solving your
+	   particular problem at hand!</p>
+	 </div>
+       </div>
+
+       <hr class="featurette-divider">
+
+       <div class="row featurette">
+	 <div class="col-md-7">
+	   <h2 class="featurette-heading">Free, <span class="text-muted">Forever.</span></h2>
+	   <p class="lead">RobOptim is licensed under the permissive
+	   LGPL-3 license allowing its use in commercial projects.</p>
+        </div>
+        <div class="col-md-5">
+	  <img src="assets/osi.png" alt="LGPL is an OSI Approved License" />
+        </div>
+      </div>
+
+      <hr class="featurette-divider">
+
+      <!-- /END THE FEATURETTES -->
+   </div>

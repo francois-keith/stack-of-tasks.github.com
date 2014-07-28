@@ -1,0 +1,454 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Benchmarks</title>
+
+    <!-- Bootstrap -->
+    <link href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Font Awesome -->
+    <link href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet">
+
+    <!-- Jekyll Syntax Highlighting -->
+    <link href="syntax.css" rel="stylesheet">
+
+    <!-- Website specific stylesheet -->
+    <link href="style.css" rel="stylesheet">
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+	<script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+	<script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+	<![endif]-->
+
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="//netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
+
+    
+
+    
+
+    <!-- Google Analytics -->
+    <script type="text/javascript">
+
+        var _gaq = _gaq || [];
+	  _gaq.push(['_setAccount', 'UA-34448532-1']);
+	  _gaq.push(['_trackPageview']);
+
+	  (function() {
+	    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+	    ga.src = ('https:' == document.location.protocol ? 'https://' : 'http://') + 'stats.g.doubleclick.net/dc.js';
+	    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+	  })();
+
+    </script>
+
+    <script type="text/javascript" src="/js/oauth.min.js"></script>
+
+    <!-- favicons generated with http://realfavicongenerator.net -->
+    <link rel="shortcut icon" href="/assets/favicons/favicon.ico">
+    <link rel="apple-touch-icon" sizes="57x57" href="/assets/favicons/apple-touch-icon-57x57.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="/assets/favicons/apple-touch-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="/assets/favicons/apple-touch-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="/assets/favicons/apple-touch-icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="/assets/favicons/apple-touch-icon-60x60.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="/assets/favicons/apple-touch-icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="/assets/favicons/apple-touch-icon-76x76.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="/assets/favicons/apple-touch-icon-152x152.png">
+    <link rel="icon" type="image/png" href="/assets/favicons/favicon-196x196.png" sizes="196x196">
+    <link rel="icon" type="image/png" href="/assets/favicons/favicon-160x160.png" sizes="160x160">
+    <link rel="icon" type="image/png" href="/assets/favicons/favicon-96x96.png" sizes="96x96">
+    <link rel="icon" type="image/png" href="/assets/favicons/favicon-16x16.png" sizes="16x16">
+    <link rel="icon" type="image/png" href="/assets/favicons/favicon-32x32.png" sizes="32x32">
+    <meta name="msapplication-TileColor" content="#2b5797">
+    <meta name="msapplication-TileImage" content="/assets/favicons/mstile-144x144.png">
+    <meta name="msapplication-square70x70logo" content="/assets/favicons/mstile-70x70.png">
+    <meta name="msapplication-square144x144logo" content="/assets/favicons/mstile-144x144.png">
+    <meta name="msapplication-square150x150logo" content="/assets/favicons/mstile-150x150.png">
+    <meta name="msapplication-square310x310logo" content="/assets/favicons/mstile-310x310.png">
+    <meta name="msapplication-wide310x150logo" content="/assets/favicons/mstile-310x150.png">
+
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Benchmarks">
+    <meta property="og:site_name" content="RobOptim">
+    <meta property="og:description" content="RobOptim: Numerical Optimization for Robotics">
+    <meta property="og:url" content="http://www.roboptim.net/">
+    <meta property="og:locale" content="en_US">
+
+    <meta property="fb:page_id" content="234139373456687">
+    <meta property="fb:admins" content="719767467" />
+
+  </head>
+  <body>
+      <div class="navbar navbar-default navbar-static-top" role="navigation">
+        <div class="container-fluid">
+          <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+              <span class="sr-only">Toggle navigation</span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="index.html">RobOptim</a>
+          </div>
+          <div class="navbar-collapse collapse">
+            <ul class="nav navbar-nav">
+	      
+<li><a href="/download.html"><span class='glyphicon glyphicon-download'></span> Download</a></li>
+
+
+	      <li class="dropdown">
+		<a href="#" class="dropdown-toggle" data-toggle="dropdown"><span class="glyphicon glyphicon-book"></span>
+		  Documentation <b class="caret"></b></a>
+		<ul class="dropdown-menu">
+		  <li class="dropdown-header">RobOptim Features</li>
+		  
+<li><a href="/showcase.html">Showcase</a></li>
+
+
+		  
+<li><a href="/solvers.html">Solvers</a></li>
+
+
+		  
+<li class="active"><a href="/benchmark.html" class="active">Benchmark</a></li>
+
+
+		  
+<li><a href="/faq.html">FAQ</a></li>
+
+
+		  <li class="divider"></li>
+		  <li class="dropdown-header">RobOptim Core</li>
+		  
+<li><a href="/getting-started.html">Getting Started</a></li>
+
+
+		  <li class="divider"></li>
+		  
+<li><a href="/documentation.html">API Documentation</a></li>
+
+
+		</ul>
+	      </li>
+
+	      <li class="dropdown">
+		<a href="#" class="dropdown-toggle" data-toggle="dropdown"><span class="glyphicon glyphicon-wrench"></span>
+		  Development <b class="caret"></b></a>
+		<ul class="dropdown-menu">
+		  
+<li><a href="/development.html">Development Dashboard</a></li>
+
+
+		  <li class="divider"></li>
+		  <li><a href="http://www.github.com/roboptim/">View on GitHub</a></li>
+		</ul>
+	      </li>
+
+              <li><a href="https://groups.google.com/forum/#!forum/roboptim">
+		  <span class="glyphicon glyphicon-question-sign"></span> Support</a></li>
+            </ul>
+          </div><!--/.nav-collapse -->
+        </div><!--/.container-fluid -->
+      </div>
+
+      <div class="container">
+	<h1 id="benchmark" class="page-header">Benchmarks</h1>
+
+<p class="lead">
+  This page summarizes how much time is required to solve different
+  optimization problems. Various solvers are used to compare the
+  efficiency of the different available approaches.
+</p>
+
+
+<div class="bs-callout bs-callout-info">
+  <h4>Methodology</h4>
+  <ol>
+    <li>Run the RobOptim test suite for each solver, the
+      Hock-Schittkowski Collection problems are included, see
+      the <a href="https://github.com/roboptim/roboptim-shared-tests">roboptim-shared-tests</a>
+      repository to see the actual implementation. The "b" versions
+      correspond to minor variations of a same problem but using the
+      RobOptim in a different manner.
+    </li>
+
+    <li>Convert the RobOptim log files, i.e. <code>journal.log</code>, to a
+      YAML file using
+      <a href="https://github.com/roboptim/roboptim-analysis/blob/master/bin/log_to_yaml">log_to_yaml.py</a>.</li>
+    <li>Tests for which solvers are failing are finally removed from
+      the dataset (manually for now).</li>
+  </ol>
+
+  <p>The log file timing information are generated
+    using <a href="http://www.boost.org/doc/libs/1_55_0/doc/html/date_time/posix_time.html">Boost.DateTime</a>.
+  </p>
+
+  <p>The tests provided here are too small to test sparse solvers in
+    a robust way. Values for these solvers should be handled with
+    great care!</p>
+
+  <p><a href="http://www.ai7.uni-bayreuth.de/test_problem_coll.pdf">The
+      document defining all the problems is available here.</a>
+  </p>
+
+</div>
+
+<div id="benchmark_schittkowski_dl"></div>
+<div id="benchmark_schittkowski" style="width: 100%; height: 300em"></div>
+
+<!-- Load highcharts API -->
+<script src="http://code.highcharts.com/highcharts.js"></script>
+<script src="http://code.highcharts.com/modules/exporting.js"></script>
+
+<!-- Load underscore API -->
+<script src="underscore-min.js"></script>
+
+<script type="text/javascript">
+  var benchmark = {};
+  
+
+  var cfsqp_fail = ["15", "16", "20", "25", "28", "33", "40", "47", "48", "49",
+                    "50", "51", "52", "53", "55", "56", "61", "63", "66", "72",
+                    "76", "78", "79", "80", "81"]
+  for (var i = 0, tot = cfsqp_fail.length; i < tot; i++) {
+      benchmark["schittkowski"]["problem-".concat(cfsqp_fail[i])]["cfsqp"] = null;
+  }
+
+  var ipopt_fail = ["13", "16", "20", "25", "28", "44", "55", "56"]
+  for (var i = 0, tot = ipopt_fail.length; i < tot; i++) {
+      benchmark["schittkowski"]["problem-".concat(ipopt_fail[i])]["ipopt"] = null;
+  }
+
+  var ipopt_sparse_fail = ["13", "16", "20", "25", "28", "44", "55", "56"]
+  for (var i = 0, tot = ipopt_sparse_fail.length; i < tot; i++) {
+      benchmark["schittkowski"]["problem-".concat(ipopt_sparse_fail[i])]["ipopt-sparse"] = null;
+  }
+
+  var nag_nlp_fail = ["2", "8", "13", "14", "16", "20", "23",
+                      "25", "28", "33", "47", "55", "56", "72"]
+  for (var i = 0, tot = nag_nlp_fail.length; i < tot; i++) {
+      benchmark["schittkowski"]["problem-".concat(nag_nlp_fail[i])]["nag-nlp"] = null;
+  }
+
+  var nag_nlp_sparse_fail = ["2", "8", "13", "14", "16", "20", "23", "24",
+                             "25", "28", "33", "44", "47", "55", "56", "72"]
+  for (var i = 0, tot = nag_nlp_sparse_fail.length; i < tot; i++) {
+      benchmark["schittkowski"]["problem-".concat(nag_nlp_sparse_fail[i])]["nag-nlp-sparse"] = null;
+  }
+
+  var nlopt_fail = ["2", "8", "9", "12", "16", "19", "20", "25", "26", "28",
+                    "33", "34", "36", "43", "44", "47", "49", "51", "55",
+                    "56", "65", "81"]
+  for (var i = 0, tot = nlopt_fail.length; i < tot; i++) {
+      benchmark["schittkowski"]["problem-".concat(nlopt_fail[i])]["nlopt"] = null;
+  }
+
+  var pagmo_fail = ["6", "7", "10", "13", "15", "24", "26", "27", "31", "39",
+                    "40", "47", "56", "60", "61", "63", "71", "78", "79",
+                    "80", "81", "71b"]
+  for (var i = 0, tot = pagmo_fail.length; i < tot; i++) {
+      benchmark["schittkowski"]["problem-".concat(pagmo_fail[i])]["pagmo"] = null;
+  }
+
+  var solverPrettyNames = {
+      "cfsqp":          "CFSQP",
+      "ipopt":          "IPOPT",
+      "ipopt-sparse":   "IPOPT (sparse)",
+      "nag-nlp":        "NAG",
+      "nag-nlp-sparse": "NAG (sparse)",
+      "nlopt":          "NLopt (alpha)",
+      "pagmo":          "PaGMO (alpha)"
+  };
+
+  var bench_colors = [
+    'blue',
+    'red',
+    'orange',
+    'green',
+    'purple',
+    'dodgerblue',
+    'magenta'
+  ]
+
+  // Add data labels to bars
+  // Note: this kinda botches display, so only use it locally
+  var use_data_labels = false;
+
+  // Put the legend at the top of the graph
+  // Note: this is probably better for display on a website
+  var use_top_legend = true;
+
+  var legend = {};
+
+  if (use_top_legend)
+    {
+      legend["align"] = 'right';
+      legend["layout"] = 'vertical';
+      legend["verticalAlign"] = 'top';
+      legend["x"] = -40;
+      legend["y"] = 100;
+      legend["floating"] = true;
+      legend["borderWidth"] = 1;
+      legend["backgroundColor"] = '#FFFFFF';
+      legend["shadow"] = true;
+      legend["reversed"] = false;
+  }
+
+  function problemNameToId(pbName)
+  {
+    var pbId = pbName.replace('problem-', '');
+    pbId = ('000000' + pbId);
+    pbId = pbId.substr(pbId.length - 3);
+    return pbId;
+  }
+
+  function problemIdToName(pbId)
+  {
+    return 'problem-'.concat(pbId.replace(/^0+/, ''));
+  }
+
+  result = {}
+
+  // Solver list
+  var problems = benchmark["schittkowski"];
+  result["solvers"] = _.chain(problems)
+                       .map(function(el) {
+                         return _.keys(el);
+                       })
+                       .flatten()
+                       .uniq()
+                       .value();
+
+  // Problem list
+  var pb_names = _.keys(problems);
+  result["problems"] = _.chain(pb_names)
+                        .map(problemNameToId)
+                        .sortBy(function(el){ return el; })
+                        .value();
+
+  // Benchmark data: name (solver), data (for each problem), color, index
+  result["series"] = _.chain(result["solvers"])
+                      .map(function(el) {
+                        var solver_data = {};
+                        // Solver name
+                        solver_data["name"] = (solverPrettyNames[el] ? solverPrettyNames[el] : el);
+                        // Index
+                        var index = _.indexOf(_.keys(solverPrettyNames), el);
+                        solver_data["index"] = _.size(_.keys(solverPrettyNames)) - index;
+                        solver_data["legendIndex"] = index;
+                        // Color
+                        solver_data["color"] = bench_colors[index];
+                        // Solver data for each problem
+                        solver_data["data"] = _.map(result["problems"],
+                                                    function(pbId) {
+                                                      try {
+                                                          var value = {
+                                                            dataLabels: {
+                                                              enabled: use_data_labels,
+                                                              format: "<b>" + solver_data["name"] + "</b>",
+                                                              useHtml: true,
+                                                            },
+                                                            y: parseFloat(problems[problemIdToName(pbId)][el])
+                                                          };
+                                                        return value;
+                                                      }
+                                                      catch(err) {
+                                                        console.error("problem " + pbId + " undefined for solver " + el);
+                                                        return null;
+                                                      }
+                                                      return null;
+                                                    });
+                        return solver_data;
+                      })
+                      .value();
+
+  console.log(result)
+
+  var size = 10;
+  var height = _.size(result["problems"]) * _.size(result["solvers"]) * 2 * size
+
+  $(function() {
+    $('#benchmark_schittkowski').highcharts({
+      chart: {
+          type: 'bar',
+          height: height
+      },
+      title: {
+        text: 'Hock-Schittkowski Collection Test Suite'
+      },
+      subtitle: {
+        text: 'RobOptim Benchmark'
+      },
+      plotOptions: {
+          bar: {
+            pointPadding: 100
+          },
+          series: {
+            pointPadding: 0.1,
+            groupPadding: 0.1,
+          }
+      },
+      xAxis: {
+        categories: result["problems"],
+        title: {
+          text: "Problem Id"
+        },
+        reversed: true,
+      },
+      yAxis: {
+        min: 0,
+        title: {
+          text: "Time (seconds)"
+        }
+      },
+      legend: legend,
+      exporting: {
+        sourceHeight: height,
+        filename: "hock_schittkowski_benchmark"
+      },
+      series: result["series"]
+    });
+  });
+
+</script>
+
+<!-- vim: set ts=2 sw=2 ft=liquid si: -->
+
+      </div> <!-- /container -->
+
+      
+      <div class="container"><div id="disqus_thread"></div></div>
+ <script type="text/javascript">
+   var disqus_shortname = 'roboptim';
+   var disqus_identifier = 'benchmark.html';
+   var disqus_title = 'Benchmarks';
+   var disqus_url = 'http://roboptim.net/benchmark.html';
+   (function() {
+   var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+   dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+   (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+   })();
+ </script>
+ <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+ <a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+
+      
+
+      <div class="container">
+	<!-- FOOTER -->
+	<footer>
+          <p class="pull-right"><a href="#">Back to top</a></p>
+          <p>&copy; 2014 <a href="authors.html">RobOptim Team</a> &middot; <a href="http://www.github.com/roboptim">GitHub</a>
+	    &middot; <a href="http://www.github.com/roboptim/roboptim.github.com">Fork this website</a>
+	  </p>
+      </footer>
+      </div> <!-- /container -->
+  </body>
+</html>
