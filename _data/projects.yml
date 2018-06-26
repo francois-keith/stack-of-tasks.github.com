@@ -3,8 +3,9 @@
   image: demo_robotatcwe.png
   title: Robot@CWE
   lab: JRL-Japan
-  description: This is the Final demonstrator of the FP7 IP Robot@CWE project.
+  description: Final demonstrator of the FP7 IP Robot@CWE project.
   ref: stasse-robot-13
+  year: 2013
   video:
     youtube_id: hRf0XJaIlmY
 
@@ -13,8 +14,11 @@
   image: demo_ballerose.png
   title: Grasping while walking
   lab: JRL-Japan
-  description: Grasping a ball with visual guidance while walking. First demonstration with the presented framework during the end of Nicolas Mansard's PhD
+  description: Grasping a ball with visual guidance while walking.
   ref: mansard-icra-07
+  year: 2007
+  author: Nicolas Mansard
+  context: PhD Thesis
   url: http://www.irisa.fr/lagadic/publi/publi/Mansard07a-eng.html
 
 - name: demo_frigo
@@ -22,8 +26,11 @@
   image: demo_frigo.png
   title: Open the fridge
   lab: JRL-Japan
-  description: The robot opens a fridge to grasp a can. The motion results from an optimized task sequence. The motion was implemented by F. Keith during his PhD thesis.
+  description: The robot opens a fridge to grasp a can. The motion results from an optimized task sequence.
   ref: keith-iros-09
+  year: 2009
+  author: F. Keith
+  context: PhD Thesis
   url: http://hal-lirmm.ccsd.cnrs.fr/lirmm-00733383
 
 - name: demo_switch
@@ -31,8 +38,12 @@
   image: demo_switch.png
   title: Haptic communication
   lab: JRL-Japan
-  description: Study about the haptic (non verbal) communication between two human partners during a task implying physical collaboration. The resulting strategies are applied to drive the humanoid robot decisions. The motion was programmed by A. Bussy during his PhD thesis.
+  description: Study about the haptic (non verbal) communication between two human partners during a task implying physical collaboration. 
+    The resulting strategies are applied to drive the humanoid robot decisions.
   ref: bussy-iros-12
+  year: 2012
+  author: A. Bussy
+  context: PhD Thesis
   video:
     youtube_id: kYUdYOIYeZ0
   url: http://hal-lirmm.ccsd.cnrs.fr/lirmm-00773403
@@ -42,8 +53,11 @@
   image: demo_bci.png
   title: Brain computer interface
   lab: JRL-Japan
-  description: The robot is driven by symbolic orders that are selected by a brain-computer interface. The orders are converted into tasks that are applied by the robot. The demonstration was developped by P. Gergondet during his PhD thesis. It is one of the main demonstrators of the FP7 IP VERE project.
+  description: The robot is driven by symbolic orders that are selected by a brain-computer interface. The orders are converted into tasks that are applied by the robot. It is one of the main demonstrators of the FP7 IP VERE project.
   ref: gergondet-roma-12
+  year: 2012
+  author: P. Gergondet
+  context: PhD Thesis
   video:
     youtube_id: dyw4fz4VIU4
   url: http://hal-lirmm.ccsd.cnrs.fr/lirmm-00781528
@@ -53,8 +67,11 @@
   image: demo_torea_robot.png
   title: Active vision
   lab: JRL-Japan
-  description: The robot autonomously selects the most relevant poses to improve the 3D reconstruction of an ob ject. The built model is then used for the "Treasure hunting" project, led by O. Stasse [Saidi 07]. The active-search movements have been develop ed by T. Foissote during his PhD thesis.
+  description: The robot autonomously selects the most relevant poses to improve the 3D reconstruction of an object. The built model is then used for the "Treasure hunting" project, led by O. Stasse. The active-search movements have been develop ed by T. Foissote during his PhD thesis.
   ref: Foissotte:2010
+  year: 2010
+  author: Torea Foissote
+  context: PhD Thesis
 
 - name: demo_joystick
   id: 8
@@ -63,8 +80,9 @@
   lab:
     - JRL-Japan
     - INRIA
-  description: First application of the "joystick-drive" walking pattern generator. The COM tra jectory is the closest to the velo city input given by the joystick [Herdt 10]. The footprints are computed during the COM trajectory optimization and bounded to stay inside a security zone computed during a learning process [Stasse 09].
+  description: First application of the "joystick-drive" walking pattern generator. The COM tra jectory is the closest to the velo city input given by the joystick. The footprints are computed during the COM trajectory optimization and bounded to stay inside a security zone computed during a learning process.
   ref: perrin-icra-10
+  year: 2010
   url: http://homepages.laas.fr/florent/publi/10icra.pdf
 
 
@@ -76,14 +94,16 @@
   lab: JRL-Japan
   description: Similarly to the previous item, the robot COM and footprints are computed by model-predictive control. This time, the robot velocity is input by the camera feedback, following a visual-servoing scheme.
   ref: dune10
+  year: 2010
   url: http://hal.inria.fr/inria-00567664
 
 - name: demo_stpbv
   image: demo_stpbv.png
   title: Obstacle avoidance
   lab: JRL-Japan
-  description: The obstacles are locally taken into account in the control scheme. The task used to prevent the collision is based on a smooth body envelope [Escande 07].
+  description: The obstacles are locally taken into account in the control scheme. The task used to prevent the collision is based on a smooth body envelope.
   ref: stasse-icra-08
+  year: 2008
   url: http://homepages.laas.fr/ostasse/os_icra_2008.pdf
 
 - name: demo_skin
@@ -96,6 +116,7 @@
   description: Several tactile and proximetric sensor cells are attached to the HRP-2 robot cover. They are used to guide the robot and teach by showing how to grasp various classes of ob ject using whole-body grasps.
   ref: mittendorfer-iros-13
   url: hal.archives-ouvertes.fr/hal-00805079
+  year: 2013
   video:
     file_url: http://hal.archives-ouvertes.fr/docs/00/80/50/79/VIDEO/2013_A_General_Tactile_Approach_for_Grasping_Unknown_Objects_with_a_Humanoid_Robot.mp4
 
@@ -108,6 +129,7 @@
     - CIMAT
   description: A navigation trajectory is computed while taking into account the robot visibility constraints. The plan is then executed using the walking pattern generator and the proposed whole-body resolution scheme.
   ref: hayet-ijhr-12
+  year: 2012
   url: https://staff.aist.go.jp/e.yoshida/papers/hayet-ijhr12.pdf
 
 - name: demo_clermont
@@ -119,6 +141,7 @@
     - LASMEA
   description: The head and both arms are controlled following a 2D visual feedback.
   ref: moughlbay-jnrh-10
+  year: 2010
 
 - name: demo_fastplan
   id: 13
@@ -130,6 +153,7 @@
   description: Using fast feasibility tests, the footsteps leading to a goal position are recomputed on the light to track modifications of the environment. The footstep plan is then executed by inverse kinematics
   ref: baudouin-humanoids-11
   url: http://hal.archives-ouvertes.fr/docs/00/60/13/00/PDF/humanoids11-lbaudouin.pdf
+  year: 2011
   video:
     youtube_id: H6cbwkNTafw
 
@@ -141,6 +165,9 @@
 ##   description: A footstep plan is computed into a very constrained environment. The flying-foot position is servoed. A programming language during the execution based on visual feedback. The demonstration was realized by T. Moulard during his PhD thesis.
 ##   ref: moulard-biorob-12
 ##   url: http://hal.archives-ouvertes.fr/hal-00601291
+##   author: Nicolas Mansard
+##   context: PhD Thesis
+##   year: 2012
 ##   video:
 ##     youtube_id: cUZ0nNiPs70
 
@@ -151,6 +178,9 @@
 ##   lab: LAAS
 ##   description: The robot motion is computed from motion-capture dynamic motion of a human dancer. Most of the work has been done by O. Ramos during his Master thesis.
 ##   ref: ramos-ram-sub13
+##   year: 2013
+##   author: O. Ramos
+##   context: Master thesis
 
 ## - name: demo_chair
 ##   id: 16
@@ -171,6 +201,7 @@
 ##   description: The task-function approach is used to describe an observed motion.
 ##   ref: hak-tsmc-12
 ##   url: http://hal.archives-ouvertes.fr/hal-00697272
+##   year: 2012
 
 ## - name: demo_duong
 ##   id: 18
@@ -180,7 +211,7 @@
 ##   description:
 ##   ref: duong-humanoid-12
 ##   url: hal.inria.fr/hal-00727600
-
+##   year: 2012
 
 ## - name: demo_smallstep_cdf
 ##   id: 19
@@ -190,7 +221,9 @@
 ##   description: The framework is used to execute a footstep plan computed by homotopy [Kanoun 11b]. The footstep trajectory is computed at the medium rate of 3Hz. The footsteps and robot posture is then sent to the control and performed in real time. Both algorithm loops are closed on the camera feedback. This motion was developed by D. Dang during his PhD thesis.
 ##   ref: dalibard-humanoid-11
 ##   url: hal.inria.fr/hal-00602384
-
+##   author: D. Dang
+##   context: PhD Thesis
+##   year: 2011
 
 
 ## - name: demo_slam
@@ -201,6 +234,9 @@
 ##   description: The robot localizes itself using a visual sparse map. The localization error is back fed to the control that corrects the position with respect to an input plan. The robot finally grasps a ball after several steps. The demonstration was developed by T. Moulard during his PhD thesis.
 ##   ref: moulard-icra-12sub
 ##   url: http://hal.inria.fr/hal-00733666
+##   author: T. Moulard
+##   context: PhD Thesis
+##   year: 2012
 ##   video:
 ##     file_url:http://hal.archives-ouvertes.fr/docs/00/73/36/66/VIDEO/13icra.mp4
 
@@ -212,6 +248,7 @@
 ##   description: Application of the multi-contact inverse-dynamics motion generation to the humanoid robot Romeo model.
 ##   ref: ramos-humanoid-11
 ##   url: hal.archives-ouvertes.fr/hal-00600959
+##   year: 2011
 ##   video:
 ##     youtube_id: WkBU20Ut1Yo
 
@@ -242,6 +279,7 @@
 ##   lab: LAAS
 ##   description: The framework is bridged to the middleware ROS. The middleware is used to import data coming from other processes or other computers (vision data, user commands, etc). The PR-2 model is included in the framework.
 ##   ref: moulard-ros-12
+##   year: 2012
 
 ## - name: demo_romeo
 ##   id: 25
@@ -250,6 +288,7 @@
 ##   lab: INRIA
 ##   description: The robot Romeo navigates into a virtual home environment and finally performs a manipulation task. Final demonstrator of WP7 of the FUI Romeo project
 ##   ref: keith-wpromeo-11
+##   year: 2011
 ##   video:
 ##     youtube_id: eiQctKGUPw4
 
