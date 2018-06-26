@@ -12,11 +12,20 @@ category: Documentation
     <td  style="width:100px"><center><b>Robot</b></center></td>
     <td><center><b>State</b></center></td>
     <td><center><b>Additional installation instructions</b></center></td>
+    <td><center><b>Sample run</b></center></td>
   </tr>
   <tr>
     <td><center><img src="images/robots/romeo.png" height="90" /></br>Romeo</center></td>
     <td>Tested on simulation.</br>Maintained</td>
     <td>Included in the default installation script</td>
+    <td>Python only
+      <ol>
+	<li>[Console 1] roslaunch romeo_description sot_display</li>
+	<li>[Console 2] cd $tutorial_path</br>
+      ipython -i walk_romeo.py
+  </li>
+      </ol>
+    </td>
   </tr>
   <tr>
     <td><center><img src="images/robots/hrp2.png" height="90" /></br>HRP2</center></td>
@@ -60,7 +69,95 @@ category: Documentation
     <td>
       <ul>
         <li>Add the following lines to your install-sot script.</li>
+<pre><code bash>
+  inst_array[index]="install_ros_ws_package sot_pr2"
+  let "index= $index + 1"
+</code bash></pre>
       </ul>
     </td>
+    <td>Kinametic simulation. RVIZ only
+      <ol>
+	<li>[Console 1] roslaunch sot_pr2 display.launch</li>
+	<li>[Console 2] cd $tutorial_path</br>
+      ipython -i pr2_sot_demo.py
+  </li>
+      </ol>
+Gazebo
+      <ol>
+	<li>
+roslaunch sot_pr2 gazebo.launch
+roslaunch ctrl_interface vel_bridge.launch 
+roslaunch robohow_sot_demo robohow_pr2.launch my_robot:=pr2  kinematics:=False
+
+  </li>
+	<li>
+  </li>
+      </ol>
+    </td>
+
   </tr>
 </table>
+
+<div style="margin:20px; margin-top:5px">
+<div class="quotetitle"><b>Spoiler:</b>
+  <input type="button" value="Afficher" style="width:45px;font-size:10px;margin:0px;padding:0px;" onclick="if (this.parentNode.parentNode.getElementsByTagName('div')[1].getElementsByTagName('div')[0].style.display != '') { this.parentNode.parentNode.getElementsByTagName('div')[1].getElementsByTagName('div')[0].style.display = '';        this.innerText = ''; this.value = 'Cacher'; } else { this.parentNode.parentNode.getElementsByTagName('div')[1].getElementsByTagName('div')[0].style.display = 'none'; this.innerText = ''; this.value = 'Afficher'; }" /></div><div class="quotecontent"><div style="display: none;">
+
+If you do not want to test the pouring task directly, you can run a test allowing to test joint by joints the robot.
+Run the following instructions (the index indicates the number of the console) to test with gazebo.
+
+1. roslaunch sot_pr2 gazebo.launch
+#This starts gazebo with the pr2 in it
+
+2. roslaunch pr2_description upload_pr2.launch 
+   roslaunch ctrl_interface vel_bridge.launch
+#This starts rviz and define the pr2 robot model as the current robot.
+ 
+3. rosparam set robot pr2
+   rosrun sot_controller_wrapper start_controller 
+
+#This will create several velocity controller (one by joint) and start publishing 
+desired velocity given by the SoT. This velocity is read from the JointState value
+published by the sot
+
+4. rosrun dynamic_graph_bridge run_command `rospack find robohow_sot_demo`/python/pr2_test.py
+
+5. rosservice call /start_dynamic_graph 
+# starts controlling the robot with the sot.
+5. rosrun dynamic_graph_bridge
+   >> help()
+
+then you can test the joints one by one using 
+testJoint(robot, index, angle)
+
+e.g: testJoint(robot, 22, 0.2)
+
+Note that only the joints published by the ctrl_interface (aka the arms) will be taken into account.
+You will not be able to change the head position (unless you publish the corresponding messages).
+
+*Important* The position tasks still do not take into account the revolute joints, so it is likely that the hands of the robot turn at the beginning of the motion to reach 0.
+
+
+To test the pouring motion, do:
+
+1. roslaunch sot_pr2 gazebo.launch
+#This starts gazebo with the pr2 in it
+
+2. roslaunch ctrl_interface vel_bridge.launch
+
+
+3. Then load everything for the pr2 robot
+roslaunch robohow_sot_demo robohow_pr2.launch my_robot:=pr2  kinematics:=False
+
+
+
+
+
+</div></div>
+</div>
+<div class="quotetitle"><b>Spoiler:</b>
+  <input type="button" value="Afficher" style="width:45px;font-size:10px;margin:0px;padding:0px;" onclick="if (this.parentNode.parentNode.getElementsByTagName('div')[1].getElementsByTagName('div')[0].style.display != '') { this.parentNode.parentNode.getElementsByTagName('div')[1].getElementsByTagName('div')[0].style.display = '';        this.innerText = ''; this.value = 'Cacher'; } else { this.parentNode.parentNode.getElementsByTagName('div')[1].getElementsByTagName('div')[0].style.display = 'none'; this.innerText = ''; this.value = 'Afficher'; }" /></div><div class="quotecontent"><div style="display: none;">{TEXT}</div></div>
+</div>
+
+
+<div style="padding: 10em"></div>
+
